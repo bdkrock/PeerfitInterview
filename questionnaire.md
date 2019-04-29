@@ -35,6 +35,9 @@ Below are three sections related to the project.
     - According to the time at which reservations were made in the `mindbody_reservations` dataset, most classes were booked by users in the evening (53 bookings).
 
 #### 6. How many confirmed completed reservations did the member (ID) with the most reserved classes in February have?
+  - NOTE: refer to "My Questions/Observations" notes 2 and 3
+  - Across both partners for February, there is a three-way tie for members with most reserved classes: 6-mb, 4-mb, and 12-mb (all with 5 reserved classes in February). Member 6-mb attended all 5 classes, while the other two members attended 4 of their 5 reserved classes.
+  - Refer to `Data Solution 6.sql` file for associated query
 
 #### 7. Write a query that unions the `mindbody_reservations` table and `clubready_reservations` table as cleanly as possible.
 
