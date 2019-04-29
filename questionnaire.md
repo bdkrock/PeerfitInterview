@@ -40,7 +40,7 @@ Below are three sections related to the project.
 
 ## My Questions/Observations
 
-1. For Question 1 and all other applicable questions, I defined "completed reservations" as those for which a reservation was made AND a check-in/sign-in datetime exists. This is based on my intuition of what it means to "complete" a reservation, since this particular term was not defined elsewhere.
+#### 1. For Question 1 and all other applicable questions, I defined "completed reservations" as those for which a reservation was made AND a check-in/sign-in datetime exists. This is based on my intuition of what it means to "complete" a reservation, since this particular term was not defined elsewhere.
 
-2. In the `clubready_reservations` dataset, there are cases where the reservation has a boolean value of `TRUE` in the `canceled` column AND has a `datetime` value in the `signed_in_at` column
+#### 2. In the `clubready_reservations` dataset, there are cases where the reservation has a boolean value of `TRUE` in the `canceled` column AND has a `datetime` value in the `signed_in_at` column
   - I interpreted these instances as "completed reservations" despite the `canceled` value of `TRUE`, since there was a `NOT NULL` `signed_in_at` value. 
