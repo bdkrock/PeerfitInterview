@@ -23,6 +23,9 @@ Below are three sections related to the project.
   - Refer to `Data Solution 3.sql` file for associated query
 
 #### 4. How many members completed at least 1 reservation and had no more than 1 cancelled reservation in January?
+  - NOTE: refer to "My Questions/Observations" notes 2 and 3
+  - In January, there were 28 members across both platforms who completed at least 1 reservation and had no more than 1 cancelled reservation
+  - Refer to `Data Solution 4.sql` file for associated query
 
 #### 5. At what time of day do most users book classes? Attend classes? (Morning = 7-11 AM, Afternoon = 12-4 PM, Evening = 5-10 PM)
 
@@ -46,3 +49,10 @@ Below are three sections related to the project.
 
 #### 2. In the `clubready_reservations` dataset, there are cases where the reservation has a boolean value of `TRUE` in the `canceled` column AND has a `datetime` value in the `signed_in_at` column
   - I interpreted these instances as "completed reservations" despite the `canceled` value of `TRUE`, since there was a `NOT NULL` `signed_in_at` value. 
+    - For Question 4, the implication on my solution is two-fold:
+      - I include these as completed for determining which members completed at least 1 reservation in January, BUT
+      - I ALSO consider these reservations to be canceled for the sake of calculating members who had no more than 1 cancellation
+
+
+#### 3. I was unsure whether the `member_id` field across both tables was unique for that partner, or for Peerfit. For my solution, I decided that the `member_id` was unique at the PARTNER level; i.e. `member_id` 1 from `clubready_reservations` is NOT the same person as `member_id` 1 from `mindbody_reservations`. Note that if this interpretation is incorrect, then any solutions involving distinct member id's will also be incorrect.
+  - The effect of this interpretation on Question 4 is material, since members who use both partner platforms would have been excluded from the count if they had been recognized as identical
