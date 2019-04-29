@@ -48,11 +48,41 @@ Below are three sections related to the project.
 # Project Discussion
 
 ### 1. What opportunities do you see to improve data storage and standardization for these datasets?
+There is quite a bit that can be improved for these datasets in terms of data storage/design and standardization. I'll try to keep my observations at a high level for the sake of sticking to the time limit. 
+
+Normalization would greatly improve the storage requirements, database speed, and usability of these datasets. For the purposes of this discussion question, I'll work backwards (e.g. from what was provided) instead of from the ground up (e.g. how I would design it from scratch). 
+
+First, I'll focus on data storage and performance. I noticed that all of the fields except for `id` are `DEFAULT NULL`, which can slow down database and query performance when the model is scaled. Likewise, the data types used are inconsistent across the two datasets. For instance, `studio_key` is `varchar(40)` in `clubready_observations` but `varchar(100)` in `mindbody_reservations`; these should be standardized and the data type should be set to the lowest possible variable length. There are other possibilities for data type changes, depending on the future state model of the database.
+
+Next, actual database schema is inefficient in terms of design. These datasets contain many repeating groups, redundant data, and fields that are not dependent on the primary keys. A unique identifier variable needs to be created to identify the partners. Additionally, the `id` field exists in both datasets and contains non-unique values between the two and needs to be distinguished; these should be moved to a new table containing two primary keys (the newly-distinguished `id` field with the reservation id, and the newly-created `partner_id`). Similarly, `member_id` is not unique between tables, and needs to be uniquely identified at a higher level to correspond with partners; a new `member` table should be created to store this data. `member_id` should be included in the new `reservation_id` table discussed before.
+
+Then, separate tables should be used to eliminate repeating data/groups within reservation data. This could be accomplished by having one table containing unique for each of the following: `studio_key` data (including any additional information associated with that studio), and class information (including `class_tag`, `instructor_full_name`, and `level`). 
+
+Finally, the column names and formats are not consistent and need to be standardized. This is primarily true of the datetime fields.
+
+I could go into more detail, but I need to be wary of time.
 
 ### 2. What forecasting opportunities do you see with a dataset like this and why?
+Option 1: compare the relationship between canceled/abandoned reservations across multiple potential drivers contained in these datasets, such as studio, class tag, level of class, and time of class. Are any of these variables more likely to result in a cancelled/abandoned reservation? Can they be benchmarked and compared across historical data to predict future behavior?
+
+Option 2: compare the relationship between individual members and their likelihood to cancel/abandon a reservation. Are their results comparable to overall results? Are any variables driving their likelihood to cancel/abandon (e.g. time of class, level of difficulty, etc.)? Do these variable-based patterns correlate to established benchmarks?
+
+Option 3: compare the usage/cancellation data above to member subscription/benefit data to observe patterns such as "are members who cancel frequently more likely to quit the program or rescind the benefit?"
+
+Option 4: given the revenue model associated with reservation completion and/or cancellation/abandonment, utilize the models built above to forecast future income and cash flows.
+
+Of course all of this could be fed into machine learning models to enhance predictive ability and pinpoint further topics for exploration.
 
 ### 3. What other data would you propose we gather to make reporting/forecasting more robust and why?
+This is a broad question with far-reaching implications, but I'll try to keep it short. 
 
+Geographic data for both studio/class locations and member workplace/home could be useful to determine whether commute time influences likelihood to keep/abandon a reservation.
+
+Further member demographic data could be utilized to add more variables and further increase the value, depth, and breadth of predictive models. 
+
+Review data around individual studios, their class offerings, and their instructors could also shed light on historical trends in cancelled/abandoned reservations and help model future behavior. 
+
+Obviously, financial data regarding the income and income lost is important, and is necessary if financial models are to be built.
 
 
 # My Questions/Observations
