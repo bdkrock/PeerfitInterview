@@ -40,6 +40,8 @@ Below are three sections related to the project.
   - Refer to `Data Solution 6.sql` file for associated query
 
 #### 7. Write a query that unions the `mindbody_reservations` table and `clubready_reservations` table as cleanly as possible.
+  - Refer to `Data Solution 7.sql` file for associated query
+  - As shown in the associated UNION query, I identified 7 fields that were somewhat uniform across both tables. One field included that was not uniform was `canceled` from `clubready_reservations`, which contained BOOLEAN `t` or `f` to indicate whether a reservation was canceled in advance for that partner. The corresponding field in `mindbody_reservations` is `canceled_at`, which contains a datetime recording when a reservation was canceled in advance for that partner. In my UNION query, I converted the latter to BOOLEAN `t` or `f` to match the format in the former; I opted to coerce datetime data to boolean, since there was no data in `clubready_reservations` to indicate the datetime at which cancellations were made. Finally, I added a `partner` column to indicate the table from which each record originated.
 
 
 
