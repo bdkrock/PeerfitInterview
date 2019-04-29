@@ -5,7 +5,7 @@ Below are three sections related to the project.
 2. Project Discussion, which contains the project discussion topics and my responses
 3. My Questions/Observations, which contains my notes, questions, and other observations relating to the project and questionnaire solutions
 
-## Project Data Points
+# Project Data Points
 
 #### 1. Across all reservation partners for January & February, how many completed reservations occurred?
   - NOTE: refer to "My Questions/Observations" note 1
@@ -42,16 +42,18 @@ Below are three sections related to the project.
 #### 7. Write a query that unions the `mindbody_reservations` table and `clubready_reservations` table as cleanly as possible.
 
 
-## Project Discussion
 
-#### 1. What opportunities do you see to improve data storage and standardization for these datasets?
+# Project Discussion
 
-#### 2. What forecasting opportunities do you see with a dataset like this and why?
+### 1. What opportunities do you see to improve data storage and standardization for these datasets?
 
-#### 3. What other data would you propose we gather to make reporting/forecasting more robust and why?
+### 2. What forecasting opportunities do you see with a dataset like this and why?
+
+### 3. What other data would you propose we gather to make reporting/forecasting more robust and why?
 
 
-## My Questions/Observations
+
+# My Questions/Observations
 
 #### 1. For Question 1 and all other applicable questions, I defined "completed reservations" as those for which a reservation was made AND a check-in/sign-in datetime exists. This is based on my intuition of what it means to "complete" a reservation, since this particular term was not defined elsewhere.
 
