@@ -19,6 +19,8 @@ Below are three sections related to the project.
   - Refer to `Data Solution 2.sql` file for associated query
 
 #### 3. Which fitness area (i.e., tag) has the highest number of completed reservations for February?
+  - Across both partners in February, the fitness area with the highest number of completed reservations was `class_tag` "yoga" with a total of 12 completed reservations.
+  - Refer to `Data Solution 3.sql` file for associated query
 
 #### 4. How many members completed at least 1 reservation and had no more than 1 cancelled reservation in January?
 
