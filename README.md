@@ -3,7 +3,7 @@ Reservation Data Analysis Project for Peerfit Interview
 
 The instructions provided with the project files is included below. 
 
-The completed project questionnaire is found in the "questionnaire.md" file.
+The completed project questionnaire is found in the "questionnaire.md" file, and individual .sql files have been included in reference to the questionnaire.
 
 ## Data Interview Project
 ### Overview
