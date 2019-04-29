@@ -28,6 +28,11 @@ Below are three sections related to the project.
   - Refer to `Data Solution 4.sql` file for associated query
 
 #### 5. At what time of day do most users book classes? Attend classes? (Morning = 7-11 AM, Afternoon = 12-4 PM, Evening = 5-10 PM)
+  - NOTE: There are two alternative solutions to this question based on the wording provided. 
+  - `Data Solution 5a.sql` contains the answers to both "book classes" and "attend classes" portions of the question. In this solution in which "book classes" is interpreted to mean the reservation time of the classes; it is applicable to both datasets. 
+    - According to times of reservation for 200 reservations, most users book classes in the morning (133 classes), as well as attend classes (122 classes).
+  - `Data Solution 5b.sql` contains a solution for the "book classes" part of the question in which "book classes" is interpreted to refer to the `reserved_at` field of the `mindbody_reservations` table, which shows a datetime for when a member actually booked the class (not the time of the class they are booking). There is no data in the `clubready_observations` table corresponding to the time at which members booked a class.
+    - According to the time at which reservations were made in the `mindbody_reservations` dataset, most classes were booked by users in the evening (53 bookings).
 
 #### 6. How many confirmed completed reservations did the member (ID) with the most reserved classes in February have?
 
